@@ -1,7 +1,11 @@
 //injectTapEventPlugin();
-//groupList = new Mongo.Collection("groupList");
+/*global React*/
+/*gloabl mui*/
+/*gloabl ReactMeteorData*/
 
-var { Card, CardTitle, CardActions, FlatButton, CardText, AppBar, Paper } = mui;
+groupList = new Mongo.Collection("groupList");
+
+var { AppBar, Paper } = mui;
 
 
 var GroupsPanel = React.createClass({
@@ -18,9 +22,6 @@ var GroupsPanel = React.createClass({
     key={tile.img}
     title={tile.title}
     actionIcon={<IconButton><StarBorder color="white"/></IconButton>}
-    actionPosition="left"
-    titlePosition="top"
-    titleBackground={gradientBg}
     cols={tile.featured ? 2 : 1}
     rows={tile.featured ? 2 : 1}
     ><img src={tile.img} /></GridTile>);
@@ -28,15 +29,7 @@ var GroupsPanel = React.createClass({
 
   render:function(){
     <Paper zDepth={2}>
-    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
-      <GridList
-        cols={2}
-        cellHeight={200}
-        padding={1}
-        >
-        {this.getTileElements()}
-      </GridList>
-    </div>
+    
     </Paper>
   }
 });
