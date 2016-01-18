@@ -5,7 +5,7 @@
 
 groupList = new Mongo.Collection("groupList");
 
-var { AppBar, Paper } = mui;
+var { AppBar, Paper, StarBorder, GridTile, IconButton } = mui;
 
 
 var GroupsPanel = React.createClass({
@@ -36,8 +36,8 @@ var GroupsPanel = React.createClass({
 
 
 var App = React.createClass({
-  // This mixin makes the getMeteorData method work
-  mixins: [ReactMeteorData],
+  // This mixin makes the getMeteorData method work-not used for now
+  //mixins: [ReactMeteorData],
 
   getInitialState() {
     let ThemeManager = mui.Styles.ThemeManager
