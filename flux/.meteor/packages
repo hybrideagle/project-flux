@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 accounts-password
 materialize:materialize
 useraccounts:materialize
+kadira:flow-router
+kadira:blaze-layout

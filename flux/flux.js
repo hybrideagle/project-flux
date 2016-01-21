@@ -15,6 +15,12 @@ if (Meteor.isClient) {
       return events.find().fetch();
     }
   });
+  
+  FlowRouter.route('/', {
+    action: function() {
+      BlazeLayout.render("mainLayout", {content: "mainPage"});
+    }
+  });
 }
 
 if (Meteor.isServer) {
