@@ -55,20 +55,19 @@
   </main>
 </template>
 
-<template name="layout">
-  <header>{{> navbar}}</header>
-  <main>
-    {{>Template.dynamic template=content}}
-  </main>
-  <footer></footer>
-</template>
-
 <template name="groupPageContent">
-  
+  {{> insertEvent}}
   <div class="wrapper group-panel-wrapper ">
-  <h3>Name:{{getName}}</h3>
-  <p class="flow-text">Description:{{getDecsciption}}</p>
-  <h3>Events:</h3>
+  <div class="card-panel teal">
+          <span class="white-text">Name:{{getName}}</span>
+  </div>
+  <div class="card-panel teal">
+          <span class="white-text">Description:{{getDecsciption}}</span>
+  </div>
+  
+  <div class="card-panel teal">
+          <span class="white-text">Events:</span>
+  </div>
   <div class="card-container">
   {{#each event in (getEvents)}}
       <div class="card blue-grey darken-1 group-card">
@@ -96,4 +95,21 @@
     Add Event
   {{/afModal}}
 
+</template>
+
+
+
+<template name="layout">
+  <header>
+    {{> navbar}}
+    {{>Template.dynamic template=breadcrumbs}}
+  </header>
+  <div class="container">
+      <main>
+        {{>Template.dynamic template=content}}
+      </main>
+  </div>
+  <footer class="page-footer light-green">
+          
+  </footer>
 </template>

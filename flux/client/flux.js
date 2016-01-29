@@ -32,10 +32,15 @@ Template.groupPageContent.helpers({
 
 FlowRouter.route('/community', {
   action: function() {
-    BlazeLayout.render("layout", {content: "communityPageContent"});
+    BlazeLayout.render("layout", {content: "communityPageContent",breadcrumbs:"communityPageBreadcrumb"});
   }
 });
 FlowRouter.route('/', {
+  action: function() {
+    FlowRouter.go("/community");
+  }
+});
+FlowRouter.route('/groups', {
   action: function() {
     FlowRouter.go("/community");
   }
@@ -44,6 +49,6 @@ FlowRouter.route('/', {
 FlowRouter.route('/community/groups/:groupid', {
   name:"group",
   action: function() {
-    BlazeLayout.render("layout", {content: "groupPageContent"});
+    BlazeLayout.render("layout", {content: "groupPageContent",breadcrumbs:"groupPageBreadcrumb"});
   }
 });

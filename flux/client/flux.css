@@ -12,3 +12,9 @@
     margin-right:5px;
     margin-top:10px;
 }
+footer{
+    position:fixed;
+    left:0px;
+    bottom:1px;
+    width:100%;
+}
