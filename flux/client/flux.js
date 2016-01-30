@@ -1,7 +1,44 @@
 /*global groups,events,FlowRouter,BlazeLayout*/
+/*
 $(".dropdown-button").dropdown();
 
+var schema = new SimpleSchema({
+  eventName: {
+    // Labels are used to reffer to this field in validation
+    label: 'Name',
+    // Specifying the allowed type
+    type: String
+  },
+  conductedBy: {
+    label: 'Conducted By',
+    type: String
+  },
+  date: {
+    label: 'Date',
+    type: Date,
+      autoform: {
+      type: 'pickadate'
+    }
+  },
+  description: {
+    label:'Description',
+    type: String,
+    optional:true
+    },
+  time:{
+    label:'Time',
+    type:String,
+    autoform: {
+      afFieldInput: {
+        type: "time"
+      }
+    }
+  },
 
+  });
+
+events.attachSchema(schema);
+*/
 
 Template.groupPanel.helpers({
   groupData: function () {
@@ -20,7 +57,7 @@ Template.eventsPanel.helpers({
 
 Template.groupPageContent.helpers({
   getEvents: function () {
-    return events.find({createdby:FlowRouter.getParam("groupid")}).fetch();
+    return events.find({conductedBy:FlowRouter.getParam("groupid")}).fetch();
   },
   getName:function(){
     return groups.findOne({_id:FlowRouter.getParam("groupid")}).name;
