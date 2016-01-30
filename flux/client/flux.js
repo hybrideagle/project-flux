@@ -52,6 +52,9 @@ Template.groupPanel.helpers({
 Template.eventsPanel.helpers({
   eventsData: function () {
     return events.find().fetch();
+  },
+  getConductor:function(a){
+    return groups.findOne({_id:a}).name;
   }
 });
 
@@ -66,6 +69,8 @@ Template.groupPageContent.helpers({
     return groups.findOne({_id:FlowRouter.getParam("groupid")}).description || "No description given";
   }
 });
+
+
 
 FlowRouter.route('/community', {
   action: function() {
